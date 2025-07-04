@@ -1,9 +1,12 @@
 import java.util.ArrayList;
 
-
 public class Utente {
     public static void main(String[] args) {
-        
+        Utente u = new Utente("angelo", "122");
+        u.inPrestito(new Risorsa("r1", 2020, "aaa"));
+        u.stampaRisorse();
+        u.restituzione(new Risorsa("r1", 2020, "aaa"));
+        u.stampaRisorse();
     }
 
     private String nome;
@@ -31,20 +34,16 @@ public class Utente {
         risorseInPrestito.add(r);
     }
 
-    void restituzione(Risorsa r){
-        boolean trovato;
-        for(Risorsa risorsa : risorseInPrestito)
-            if(r.codice.equals(risorsa.codice)){
-                risorseInPrisorseInPrestito.
-                risorseInPrisorseInPrestito.delete(risorseInPrestito.In)
+    void restituzione(Risorsa r){     
+        for(Risorsa risorsa : risorseInPrestito){
+            String codice1 = r.getCodice();
+            String codice2 = risorsa.getCodice();
+            if(codice1.equals(codice2)){
+                risorseInPrestito.remove(risorsa);
+                break;
             }
-        if(risorseInPrestito.contains(r)){
-            int posizione = risorseInPrestito.indexOf(r);
-            risorseInPrestito.remove(posizione);
-        }else{
-            System.out.println("Risorsa non trovata");
         }
-        
+           
     }
 
     void stampaRisorse(){
